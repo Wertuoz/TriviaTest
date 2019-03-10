@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TriviaTest
 //
-//  Created by Anton Trofimenko on 05/03/2019.
+//  Created by Anton Trofimenko on 10/03/2019.
 //  Copyright © 2019 Anton Trofimenko. All rights reserved.
 //
 

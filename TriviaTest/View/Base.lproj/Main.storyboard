@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gah-WM-NTI">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Category View Controller-->
+        <scene sceneID="EcM-KN-GVc">
+            <objects>
+                <tableViewController id="gah-WM-NTI" customClass="CategoryViewController" customModule="TriviaTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RqZ-qV-hfC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="k34-Vv-h3h" customClass="CategoryCell" customModule="TriviaTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k34-Vv-h3h" id="Vd7-D6-Lhc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ayK-7l-PKS">
+                                            <rect key="frame" x="0.0" y="8.6666666666666643" width="375" height="103"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sxp-eh-NZl">
+                                                    <rect key="frame" x="152.66666666666666" y="0.0" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="lKf-9P-tVe"/>
+                                                        <constraint firstAttribute="height" constant="70" id="sUe-wo-wiu"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPm-DX-CsS">
+                                                    <rect key="frame" x="0.0" y="78" width="375" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="qRf-x7-Vui"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="19"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tPm-DX-CsS" firstAttribute="leading" secondItem="ayK-7l-PKS" secondAttribute="leading" id="NNO-5g-VWb"/>
+                                                <constraint firstAttribute="trailing" secondItem="tPm-DX-CsS" secondAttribute="trailing" id="t1e-fG-Q0e"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="ayK-7l-PKS" secondAttribute="trailing" id="ELd-qY-HxE"/>
+                                        <constraint firstItem="ayK-7l-PKS" firstAttribute="centerX" secondItem="Vd7-D6-Lhc" secondAttribute="centerX" id="a9C-Sv-3Uq"/>
+                                        <constraint firstItem="ayK-7l-PKS" firstAttribute="leading" secondItem="Vd7-D6-Lhc" secondAttribute="leading" id="okZ-sQ-mKF"/>
+                                        <constraint firstItem="ayK-7l-PKS" firstAttribute="centerY" secondItem="Vd7-D6-Lhc" secondAttribute="centerY" id="uLc-Qt-Lmo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryImage" destination="Sxp-eh-NZl" id="YG6-nS-RNv"/>
+                                    <outlet property="categoryName" destination="tPm-DX-CsS" id="Hsy-dX-bep"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gah-WM-NTI" id="xig-CB-Wap"/>
+                            <outlet property="delegate" destination="gah-WM-NTI" id="K68-Hj-eLi"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="fk0-q0-sJN" kind="presentation" identifier="DifficultySelect" id="yIV-6B-WHB"/>
+                        <segue destination="cEz-Nw-JIN" kind="presentation" identifier="ToQuestionView" id="k6U-qa-uEy"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qgd-SW-Nv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="779" y="131"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="EHf-DQ-i2N">
+            <objects>
+                <viewController id="cEz-Nw-JIN" customClass="QuestionViewController" customModule="TriviaTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XCt-jl-eZ9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9tE-b0-Qpo">
+                                <rect key="frame" x="0.0" y="279.66666666666669" width="375" height="252.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Animals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWm-FI-pgS">
+                                        <rect key="frame" x="20" y="0.0" width="335" height="25.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QuestionQuestionQuestion" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNa-KS-bK7">
+                                        <rect key="frame" x="20" y="35.333333333333314" width="335" height="25.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="yIg-Dj-yAf">
+                                        <rect key="frame" x="0.0" y="70.666666666666629" width="375" height="182"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wq0-HF-f3J">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5f-9a-adl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onAnswerBtnClick:" destination="cEz-Nw-JIN" eventType="touchUpInside" id="x3g-Ib-tEZ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJe-cs-fnF">
+                                                        <rect key="frame" x="0.0" y="48" width="375" height="38"/>
+                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onAnswerBtnClick:" destination="cEz-Nw-JIN" eventType="touchUpInside" id="73a-oe-oL9"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVC-f4-MzG">
+                                                        <rect key="frame" x="0.0" y="96" width="375" height="38"/>
+                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onAnswerBtnClick:" destination="cEz-Nw-JIN" eventType="touchUpInside" id="mFt-KM-f60"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFz-c0-bZO">
+                                                        <rect key="frame" x="0.0" y="144" width="375" height="38"/>
+                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onAnswerBtnClick:" destination="cEz-Nw-JIN" eventType="touchUpInside" id="1Dy-fZ-mwC"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Wq0-HF-f3J" firstAttribute="leading" secondItem="yIg-Dj-yAf" secondAttribute="leading" id="4KI-Cr-IXk"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wq0-HF-f3J" secondAttribute="trailing" id="4an-OJ-Squ"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zWm-FI-pgS" secondAttribute="trailing" constant="20" id="1NF-0S-OeB"/>
+                                    <constraint firstAttribute="trailing" secondItem="uNa-KS-bK7" secondAttribute="trailing" constant="20" id="28m-C5-9dm"/>
+                                    <constraint firstItem="uNa-KS-bK7" firstAttribute="leading" secondItem="9tE-b0-Qpo" secondAttribute="leading" constant="20" id="GlI-Qj-Ae3"/>
+                                    <constraint firstItem="yIg-Dj-yAf" firstAttribute="leading" secondItem="9tE-b0-Qpo" secondAttribute="leading" id="Na6-Md-nF8"/>
+                                    <constraint firstItem="zWm-FI-pgS" firstAttribute="leading" secondItem="9tE-b0-Qpo" secondAttribute="leading" constant="20" id="WFd-I5-goF"/>
+                                    <constraint firstAttribute="trailing" secondItem="yIg-Dj-yAf" secondAttribute="trailing" id="uEf-ZX-fxU"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mp5-b0-0Kq">
+                                <rect key="frame" x="20" y="662" width="335" height="96"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qr-6N-cMm">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
+                                        <color key="backgroundColor" red="0.76089900732040405" green="0.25649610161781311" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Show me the answer!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onShowAnswerBtnClick:" destination="cEz-Nw-JIN" eventType="touchUpInside" id="bQ1-kV-gxy"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4Il-KD-WvM">
+                                        <rect key="frame" x="0.0" y="58" width="335" height="38"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjr-cO-dEW">
+                                                <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="38"/>
+                                                <color key="backgroundColor" red="0.85043728351593018" green="0.21816034615039825" blue="0.15920260548591614" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                <state key="normal" title="Close">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onCloseBtnClick:" destination="cEz-Nw-JIN" eventType="touchUpInside" id="Le8-5w-rsb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGH-KS-O9A">
+                                                <rect key="frame" x="177.66666666666663" y="0.0" width="157.33333333333337" height="38"/>
+                                                <color key="backgroundColor" red="0.1911550909280777" green="0.6378670334815979" blue="0.26147949695587158" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                <state key="normal" title="Next Question">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onNextQuestionBtnClick:" destination="cEz-Nw-JIN" eventType="touchUpInside" id="eBY-fe-Yz3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mp5-b0-0Kq" firstAttribute="leading" secondItem="oVk-7q-7nI" secondAttribute="leading" constant="20" id="AvV-Du-7MH"/>
+                            <constraint firstItem="9tE-b0-Qpo" firstAttribute="leading" secondItem="oVk-7q-7nI" secondAttribute="leading" id="OfT-sO-1gU"/>
+                            <constraint firstItem="9tE-b0-Qpo" firstAttribute="centerY" secondItem="XCt-jl-eZ9" secondAttribute="centerY" id="Q4x-uy-wk6"/>
+                            <constraint firstItem="oVk-7q-7nI" firstAttribute="bottom" secondItem="mp5-b0-0Kq" secondAttribute="bottom" constant="20" id="ciW-YT-dkk"/>
+                            <constraint firstItem="oVk-7q-7nI" firstAttribute="trailing" secondItem="9tE-b0-Qpo" secondAttribute="trailing" id="kf3-lD-ZvE"/>
+                            <constraint firstItem="oVk-7q-7nI" firstAttribute="trailing" secondItem="mp5-b0-0Kq" secondAttribute="trailing" constant="20" id="qGM-nk-MgG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oVk-7q-7nI"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnClose" destination="Zjr-cO-dEW" id="pQi-Ko-ZQc"/>
+                        <outlet property="btnFirstAnswer" destination="W5f-9a-adl" id="o8A-Au-Zmp"/>
+                        <outlet property="btnFourthAnswer" destination="gFz-c0-bZO" id="qb3-LE-Lkt"/>
+                        <outlet property="btnNextQuestion" destination="MGH-KS-O9A" id="i54-S3-f5y"/>
+                        <outlet property="btnSecondAnswer" destination="jJe-cs-fnF" id="hCi-HG-Hqe"/>
+                        <outlet property="btnShowAnswer" destination="5qr-6N-cMm" id="h3Q-Vk-TE1"/>
+                        <outlet property="btnThirdAnswer" destination="UVC-f4-MzG" id="AOo-2Z-bEJ"/>
+                        <outlet property="categoryNameLbl" destination="zWm-FI-pgS" id="Gqj-KF-G3X"/>
+                        <outlet property="questionLbl" destination="uNa-KS-bK7" id="LOy-CG-PR7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8if-Ho-8K6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1705" y="474"/>
+        </scene>
+        <!--Difficulty Selection View Controller-->
+        <scene sceneID="Nsi-Ac-htC">
+            <objects>
+                <viewController id="fk0-q0-sJN" customClass="DifficultySelectionViewController" customModule="TriviaTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vep-VK-Fg6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="G2k-vg-Lkb">
+                                <rect key="frame" x="62.666666666666657" y="341" width="249.99999999999997" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mJ-r2-G7i">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="38"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCJ-Q5-5Uu">
+                                        <rect key="frame" x="0.0" y="46" width="250" height="38"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFP-0n-c5r">
+                                        <rect key="frame" x="0.0" y="92" width="250" height="38"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="v8X-Cz-YJL"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecet difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXo-SH-Fqf">
+                                <rect key="frame" x="109" y="295.66666666666669" width="157" height="25.333333333333314"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="G2k-vg-Lkb" firstAttribute="top" secondItem="xXo-SH-Fqf" secondAttribute="bottom" constant="20" id="FzK-oI-s7g"/>
+                            <constraint firstItem="G2k-vg-Lkb" firstAttribute="centerY" secondItem="Vep-VK-Fg6" secondAttribute="centerY" id="UGN-hw-ikN"/>
+                            <constraint firstItem="G2k-vg-Lkb" firstAttribute="centerX" secondItem="Vep-VK-Fg6" secondAttribute="centerX" id="dv6-cp-ih2"/>
+                            <constraint firstItem="xXo-SH-Fqf" firstAttribute="centerX" secondItem="Vep-VK-Fg6" secondAttribute="centerX" id="svA-XG-LYv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CJE-V2-rLn"/>
+                    </view>
+                    <connections>
+                        <outlet property="difficultyBtnBottom" destination="qFP-0n-c5r" id="qKA-Jj-KJz"/>
+                        <outlet property="difficultyBtnMiddle" destination="cCJ-Q5-5Uu" id="3Qz-ta-M0Y"/>
+                        <outlet property="difficultyBtnTop" destination="3mJ-r2-G7i" id="GF8-MA-WL2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DZk-PG-1lg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1705" y="-165"/>
+        </scene>
+    </scenes>
+</document>
